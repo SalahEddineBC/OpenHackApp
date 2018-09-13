@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "126088466180",
+    "firebase_url": "https://openhack-a294a.firebaseio.com",
+    "project_id": "openhack-a294a",
+    "storage_bucket": "openhack-a294a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:126088466180:android:c9126d500b734b8d",
+        "android_client_info": {
+          "package_name": "com.openhackapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "126088466180-v185dai700a9uhlc8rq37fnvuraj1rin.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDZL55tsp4rptLfAtW6SWVeXzBmpyz8K2M"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
