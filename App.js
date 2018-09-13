@@ -4,7 +4,7 @@ import { StyleSheet, Text, View, Image } from 'react-native';
 
 import SwipeCards from 'react-native-swipe-cards';
 import {SwitchNavigator} from 'react-navigation';
-import {Loading,Login,Main,SignUp  } from "./src/components";
+import {Loading,Login,Main,SignUp, LandingPage  } from "./src/components";
 class Card extends React.Component {
   constructor(props) {
     super(props);
@@ -129,14 +129,15 @@ const styles = StyleSheet.create({
 })
 */
 const App = SwitchNavigator(
-  {
+  { 
+    LandingPage,
     Loading,
     SignUp,
     Login,
     Main
   },
   {
-    initialRouteName: 'Loading'
+    initialRouteName: 'LandingPage'
   }
 );
 export default App;
