@@ -1,5 +1,9 @@
 import React from 'react';
+<<<<<<< HEAD
 import { StyleSheet, Text, TextInput, View, Button, Image, TouchableOpacity } from 'react-native';
+=======
+import { StyleSheet, Text, TextInput, View, Button } from 'react-native';
+>>>>>>> ef975580dd0b0c9a6cd791ebfc7a052166671720
 import firebase from 'react-native-firebase';
 
 export default class Login extends React.Component {
@@ -9,7 +13,7 @@ export default class Login extends React.Component {
     const { email, password } = this.state;
     firebase
       .auth()
-      .signInWithEmailAndPassword(email, password)
+      .signInAndRetrieveDataWithEmailAndPassword(email, password)
       .then(() => this.props.navigation.navigate('Main'))
       .catch(error => this.setState({ errorMessage: error.message }));
   };
