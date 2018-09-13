@@ -1,5 +1,5 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
-
+com.google.gms.googleservices.GoogleServicesPlugin.config.disableVersionCheck = true
 buildscript {
     ext {
         buildToolsVersion = "27.0.3"
@@ -7,6 +7,9 @@ buildscript {
         compileSdkVersion = 27
         targetSdkVersion = 26
         supportLibVersion = "27.1.1"
+        googlePlayServicesVersion = "15.0.1" 
+
+
     }
     repositories {
         jcenter()
