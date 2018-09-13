@@ -11,8 +11,13 @@
     "react": "16.5.0",
     "react-native": "0.57.0",
     "react-native-calendars": "^1.20.0",
+<<<<<<< HEAD
     "react-native-datepicker": "^1.7.2",
+=======
+    "react-native-easy-grid": "^0.2.0",
+>>>>>>> c5db8779d6e1477b93c4020879f7af23bd3150f7
     "react-native-firebase": "^4.3.8",
+    "react-native-maps": "^0.21.0",
     "react-native-swipe-cards": "^0.1.1",
     "react-navigation": "^2.14.0"
   },
