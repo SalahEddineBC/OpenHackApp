@@ -1,9 +1,5 @@
 import React from 'react';
-<<<<<<< HEAD
-import { StyleSheet, Text, TextInput, View, Button, Image, TouchableOpacity } from 'react-native';
-=======
-import { StyleSheet, Text, TextInput, View, Button } from 'react-native';
->>>>>>> ef975580dd0b0c9a6cd791ebfc7a052166671720
+import { StyleSheet, Text, TextInput, View, Button ,Image,TouchableOpacity} from 'react-native';
 import firebase from 'react-native-firebase';
 
 export default class Login extends React.Component {

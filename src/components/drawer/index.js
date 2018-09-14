@@ -26,7 +26,7 @@ class DrawerMenu extends Component {
             <View style={styles.navSectionStyle}>
               <Text
                 style={styles.navItemStyle}
-                onPress={this.navigateToScreen('Page1')}
+                onPress={this.navigateToScreen('Notifications')}
               >
                 Page1
               </Text>

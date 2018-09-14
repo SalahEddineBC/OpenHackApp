@@ -137,11 +137,8 @@ android {
 }
 
 dependencies {
-<<<<<<< HEAD
     compile project(':react-native-linear-gradient')
-=======
     compile project(':react-native-maps')
->>>>>>> ef975580dd0b0c9a6cd791ebfc7a052166671720
     compile project(':react-native-firebase')
     implementation(project(':react-native-maps'))
     implementation(project(':react-native-firebase'))
