@@ -3,4 +3,5 @@ import Login from './login';
 import Main from './main';
 import SignUp from './singup';
 import LandingPage from './landingPage';
-export { Loading, Login, Main, SignUp, LandingPage };
+import Diag from "./diag";
+export { Loading, Login, Main, SignUp, LandingPage ,Diag};

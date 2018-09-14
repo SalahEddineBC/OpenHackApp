@@ -3,6 +3,8 @@ package com.openhackapp;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+
+
 import com.BV.LinearGradient.LinearGradientPackage;
 import com.airbnb.android.react.maps.MapsPackage;
 import io.invertase.firebase.RNFirebasePackage;
@@ -12,7 +14,7 @@ import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
 import com.facebook.soloader.SoLoader;
-
+import io.invertase.firebase.database.RNFirebaseDatabasePackage; // <-- Add this line
 import java.util.Arrays;
 import java.util.List;
 
@@ -31,7 +33,8 @@ public class MainApplication extends Application implements ReactApplication {
             new LinearGradientPackage(),
             new MapsPackage(),
             new RNFirebasePackage(),
-            new RNFirebaseAuthPackage()
+            new RNFirebaseAuthPackage(),
+            new RNFirebaseDatabasePackage()
       );
 
 

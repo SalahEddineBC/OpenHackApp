@@ -1,7 +1,14 @@
 import React from 'react';
 import SwipeCards from 'react-native-swipe-cards';
 import { SwitchNavigator } from 'react-navigation';
-import { Loading, Login, Main, SignUp, LandingPage } from './src/components';
+import {
+  Loading,
+  Login,
+  Main,
+  SignUp,
+  LandingPage,
+  Diag
+} from './src/components';
 class Card extends React.Component {
   constructor(props) {
     super(props);
@@ -60,13 +67,16 @@ const App = DrawerNavigator(
     Login: {
       screen: Login
     },
-    LandingPage:{
-      screen:LandingPage
+    LandingPage: {
+      screen: LandingPage
+    },
+    Diag: {
+      screen: Diag
     }
   },
   {
     contentComponent: MainDrawer,
-    initialRouteName: 'LandingPage'
+    initialRouteName: 'Home'
   }
 );
 /*

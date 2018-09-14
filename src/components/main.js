@@ -21,6 +21,23 @@ const { height, width } = Dimensions.get('window');
 
 import MapView, { Marker } from 'react-native-maps';
 export default class Main extends React.Component {
+  Insert = (email, nom, pass, phone) => {
+    firebase
+      .database()
+      .ref('History')
+      .once('value', function(snapshot) {
+        firebase
+          .database()
+          .ref('users')
+          .push({
+            id: snapshot.numChildren(),
+            name: 'hgfkjygf;',
+            phonenumber: 'f,hgfv,',
+            mail: 'jytfkytf',
+            password: 'hyfdjyrnf'
+          });
+      });
+  };
   state = { currentUser: null };
   signOutUser = async () => {
     try {
@@ -29,22 +46,8 @@ export default class Main extends React.Component {
       console.log(e);
     }
   };
-  componentDidMount() {
-    const { currentUser } = firebase.auth();
-    this.setState({ currentUser });
-  }
-  array = [
-    {
-      text: 'a',
-      description: 'b'
-    },
-    {
-      text: 'g',
-      description: 'h'
-    }
-  ];
 
-  state = { currentUser: null };
+  array = [{ text: 'a', description: 'b' }, { text: 'g', description: 'h' }];
 
   signOutUser = async () => {
     try {
@@ -53,10 +56,6 @@ export default class Main extends React.Component {
       console.log(e);
     }
   };
-  componentDidMount() {
-    const { currentUser } = firebase.auth();
-    this.setState({ currentUser });
-  }
   state = {
     position: {
       latitude: 0.0,
@@ -65,8 +64,12 @@ export default class Main extends React.Component {
       longitudeDelta: 0.0421
     }
   };
-
+  componentWillMount = () => {
+    this.Insert('dfgf', 'v', 'dgf', 'dgf');
+  };
   componentDidMount = () => {
+    const { currentUser } = firebase.auth();
+    this.setState({ currentUser });
     navigator.geolocation.getCurrentPosition(
       position => {
         const pos = {
@@ -81,7 +84,11 @@ export default class Main extends React.Component {
         this.gotoCurrentLocation();
       },
       error => console.warn(error.message),
-      { enableHighAccuracy: true, timeout: 2500, maximumAge: 3600 }
+      {
+        enableHighAccuracy: true,
+        timeout: 2500,
+        maximumAge: 3600
+      }
     );
     this.watchID = navigator.geolocation.watchPosition(position => {
       const pos = {
@@ -145,6 +152,8 @@ export default class Main extends React.Component {
                 />
               </Body>
             </CardItem>
+          </Card>
+          <Card>
             <CardItem>
               <Body>
                 <Grid>
@@ -152,9 +161,6 @@ export default class Main extends React.Component {
                   <Col style={{ backgroundColor: '#00CE9F', height: 200 }} />
                 </Grid>
               </Body>
-            </CardItem>
-            <CardItem>
-              <Body />
             </CardItem>
           </Card>
           <ListCards array={this.array} />

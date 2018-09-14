@@ -7,6 +7,7 @@
         "test": "jest"
     },
     "dependencies": {
+        "firebase": "^5.5.0",
         "native-base": "^2.8.0",
         "react": "16.5.0",
         "react-native": "0.57.0",
@@ -15,7 +16,9 @@
         "react-native-easy-grid": "^0.2.0",
         "react-native-firebase": "^4.3.8",
         "react-native-linear-gradient": "^2.4.2",
+        "react-native-local-notifications": "^1.1.0",
         "react-native-maps": "^0.21.0",
+        "react-native-push-notification": "^3.1.1",
         "react-native-swipe-cards": "^0.1.1",
         "react-navigation": "^2.14.0"
     },
