@@ -1,19 +1,24 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
+import { StyleSheet, View, Image, Dimensions, ScrollView } from 'react-native';
 import * as Progress from 'react-native-progress';
 import {
   Container,
   Header,
   Left,
   Body,
+  Text,
   Title,
+  Label,
   Button,
   Icon,
-  Content
+  Content,
+  Card,
+  CardItem
 } from 'native-base';
 import SwipeCards from 'react-native-swipe-cards';
+const { height, width } = Dimensions.get('window');
 
-class Card extends React.Component {
+class Carde extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -27,7 +32,7 @@ class Card extends React.Component {
             style={{ fontSize: 100, alignItems: 'center' }}
           />
         </View>
-        <Text style={styles.text}>{this.props.question}</Text>
+        <Text style={styles.text}>{this.props.question} </Text>
       </View>
     );
   }
@@ -36,30 +41,74 @@ class Card extends React.Component {
 class NoMoreCards extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      an: []
+    };
+    fetch('http://10.0.2.2:3000/', {
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json'
+      },
+      method: 'POST',
+      body: JSON.stringify({ sym: this.props.data })
+    })
+      .then(function(response) {
+        return response.json();
+      })
+      .then(response => {
+        this.setState({ an: response.symptomes.options });
+      })
+      .catch(function(error) {
+        alert(error);
+      });
   }
-
+  componentWillMount() {}
+  fetchdata = () => {};
   render() {
     return (
-      <View style={styles.noMoreCards}>
-        <Text>No more cards</Text>
+      <View>
+        <Text
+          style={{
+            color: 'green',
+            fontSize: 24,
+            fontFamily: 'futurapt-bold'
+          }}
+        >
+          {' '}
+        </Text>
+        {this.state.an.map(element => {
+          alert(element);
+          return (
+            <Card style={{ width: width * 0.95, height: 100 }}>
+              <CardItem>
+                <Body>
+                  <Label style={styles.text}>{element}</Label>
+                </Body>
+              </CardItem>
+            </Card>
+          );
+        })}
       </View>
     );
   }
 }
-
 export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       questions: [{ question: 'lol' }],
       progress: 0.0,
-      anwsers: []
+      answers: []
     };
-    fetch('http://localhost:3000/')
-      .then(res => res.json())
-      .then(res => this.setState({ questions: res }))
-      .catch(err => {
-        console.log(err);
+    fetch('http://10.0.2.2:3000/')
+      .then(response => {
+        return response.json();
+      })
+      .then(response => {
+        this.setState({ questions: response.form });
+      })
+      .catch(error => {
+        alert(error);
       });
   }
 
@@ -67,9 +116,9 @@ export default class App extends React.Component {
     this.setState((prevState, props) => ({
       progress: prevState.progress + 1 / this.state.questions.length
     }));
-    this.setState(prevState => ({
-      responses: [...prevState.responses, card.question]
-    }));
+    this.setState({
+      answers: this.state.answers.concat([card.value])
+    });
   };
 
   handleNope = card => {
@@ -99,8 +148,8 @@ export default class App extends React.Component {
         <SwipeCards
           cards={this.state.questions}
           loop={false}
-          renderCard={cardData => <Card {...cardData} />}
-          renderNoMoreCards={() => <NoMoreCards />}
+          renderCard={cardData => <Carde {...cardData} />}
+          renderNoMoreCards={() => <NoMoreCards data={this.state.answers} />}
           handleYup={this.handleYup}
           handleNope={this.handleNope}
           yupText={'OUI'}
@@ -155,6 +204,9 @@ const styles = StyleSheet.create({
     height: 250
   },
   text: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    textAlign: 'center',
     fontSize: 20,
     paddingTop: 10,
     paddingBottom: 10

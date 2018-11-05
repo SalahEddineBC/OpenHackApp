@@ -8,7 +8,6 @@ import {
   SignUp,
   LandingPage,
   Diag,
-  MyCarousel
 } from './src/components';
 class Card extends React.Component {
   constructor(props) {
@@ -74,13 +73,10 @@ const App = DrawerNavigator(
     Diag: {
       screen: Diag
     },
-    Carousel: {
-      screen: MyCarousel
-    }
   },
   {
     contentComponent: MainDrawer,
-    initialRouteName: 'Carousel'
+    initialRouteName: 'Diag'
   }
 );
 /*
