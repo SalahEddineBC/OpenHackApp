@@ -20,6 +20,7 @@
         "react-native-progress": "^3.5.0",
         "react-native-snap-carousel": "^3.7.4",
         "react-native-swipe-cards": "^0.1.1",
+        "merge": ">=1.2.1",
         "react-navigation": "^2.14.0"
     },
     "devDependencies": {
