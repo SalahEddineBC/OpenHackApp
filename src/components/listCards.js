@@ -6,7 +6,7 @@ import {
   Container,
   Header,
   Content,
-  Card,
+  Carde,
   CardItem,
   Text,
   Icon,
@@ -20,16 +20,8 @@ import {
 export default class ListCards extends Component {
   render() {
     return (
-      <Content>
-        {this.props.array.map(e => {
-          return <ReminderCard
-            text={e.text}
-            description={e.description}
-            type={e.type}
-            date={e.date}
-          />;
-        })}
-      </Content>
+       <ReminderCard
+        ></ReminderCard>
     );
   }
 }
