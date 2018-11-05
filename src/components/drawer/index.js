@@ -9,7 +9,7 @@ import React, { Component } from 'react';
 import styles from './SideMenu.style';
 import { NavigationActions } from 'react-navigation';
 import { ScrollView, Text, View } from 'react-native';
-import { Container, Header, Content, Card, CardItem } from 'native-base';
+import { Container, Header, Content, Carde, CardItem } from 'native-base';
 import firebase from 'react-native-firebase';
 class DrawerMenu extends Component {
   signOutUser = async () => {

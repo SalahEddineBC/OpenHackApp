@@ -31,22 +31,14 @@ export default class Main extends React.Component {
           .ref('users')
           .push({
             id: snapshot.numChildren(),
-            name: 'hgfkjygf;',
-            phonenumber: 'f,hgfv,',
-            mail: 'jytfkytf',
-            password: 'hyfdjyrnf'
+            name: nom,
+            phonenumber: phone,
+            mail: email,
+            password: pass
           });
       });
   };
   state = { currentUser: null };
-  signOutUser = async () => {
-    try {
-      await firebase.auth().signOut();
-    } catch (e) {
-      console.log(e);
-    }
-  };
-
   array = [{ text: 'a', description: 'b' }, { text: 'g', description: 'h' }];
 
   signOutUser = async () => {
@@ -116,6 +108,7 @@ export default class Main extends React.Component {
   render() {
     const { currentUser } = this.state;
     return (
+      
       <Container>
         <Header style={styles.header} androidStatusBarColor="#4ac29a">
           <Left>
